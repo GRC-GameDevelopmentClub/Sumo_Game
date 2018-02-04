@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerTwoMovement : MonoBehaviour {
 
+    public float moveSpeed;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +13,14 @@ public class PlayerTwoMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
+        }
+    }
 }
