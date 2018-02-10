@@ -15,15 +15,22 @@ public class PlayerOneMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        if(Input.GetKeyDown (KeyCode.A))
+        if(Input.GetKey (KeyCode.A))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, 0);
         }
-
-        if (Input.GetKeyDown(KeyCode.D))
+        
+        else if (Input.GetKey(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
         }
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
+
+        
+
 
     }
 }
