@@ -30,12 +30,12 @@ public class PlayerOneMovement : MonoBehaviour {
 		
         if(Input.GetKey (KeyCode.A))
         {
-            rb.velocity = new Vector2(-moveSpeed, 0);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
         
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(moveSpeed, 0);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
         else
         {

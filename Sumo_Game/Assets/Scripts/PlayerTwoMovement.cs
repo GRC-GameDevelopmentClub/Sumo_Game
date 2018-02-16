@@ -29,12 +29,12 @@ public class PlayerTwoMovement : MonoBehaviour {
     void Update () {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.velocity = new Vector2(-moveSpeed, 0);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.velocity = new Vector2(moveSpeed, 0);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
         else
         {
