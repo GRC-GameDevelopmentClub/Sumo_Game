@@ -22,10 +22,18 @@ public class spike: MonoBehaviour {
 	{
 		GameObject GO;
 		Debug.Log ("HURT!");
+		//player1
 		if (collision.gameObject.CompareTag("Player"))
 		{
 			GO = collision.gameObject;
 			GO.GetComponent<PlayerOneMovement> ().healthCount -= damage;
+		}
+
+		//player2
+		if (collision.gameObject.CompareTag("Player Two"))
+		{
+			GO = collision.gameObject;
+			GO.GetComponent<PlayerTwoMovement> ().healthCount -= damage;
 		}
 	}
 }
