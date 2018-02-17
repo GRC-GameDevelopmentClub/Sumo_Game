@@ -9,20 +9,23 @@ public class spike: MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		damage = 0;
+		damage = 10;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-
+		//Debug.Log ("healthCount");
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		GameObject GO;
+		Debug.Log ("HURT!");
 		if (collision.gameObject.CompareTag("Player"))
 		{
-			damage=10;
+			GO = collision.gameObject;
+			GO.GetComponent<PlayerOneMovement> ().healthCount -= damage;
 		}
 	}
 }
