@@ -153,6 +153,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  healthCount: 20
 --- !u!212 &212346205996846838
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -16,6 +16,8 @@ public class PlayerOneMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
 
+    public float healthCount;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -48,7 +50,10 @@ public class PlayerOneMovement : MonoBehaviour {
             rb.velocity = new Vector2(0, jumpHeight);
         }
 
-
+        if (healthCount <= 0)
+        {
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        }
 
     }
 }

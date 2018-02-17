@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 61227564990213250}
   m_Layer: 0
   m_Name: Player Two
-  m_TagString: Player
+  m_TagString: Player Two
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  healthCount: 20
 --- !u!212 &212259670725671918
 SpriteRenderer:
   m_ObjectHideFlags: 1
