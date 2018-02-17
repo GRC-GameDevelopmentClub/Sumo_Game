@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerOneMovement : MonoBehaviour {
 
@@ -14,6 +15,8 @@ public class PlayerOneMovement : MonoBehaviour {
     private bool grounded;
 
     private Rigidbody2D rb;
+
+    public float healthCount;
 
     // Use this for initialization
     void Start () {
@@ -30,12 +33,12 @@ public class PlayerOneMovement : MonoBehaviour {
 		
         if(Input.GetKey (KeyCode.A))
         {
-            rb.velocity = new Vector2(-moveSpeed, 0);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
         
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(moveSpeed, 0);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
         else
         {
@@ -47,7 +50,11 @@ public class PlayerOneMovement : MonoBehaviour {
             rb.velocity = new Vector2(0, jumpHeight);
         }
 
-
+        if (healthCount <= 0)
+        {
+            //  SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+            Debug.Log("Lost all health");
+        }
 
     }
 }
