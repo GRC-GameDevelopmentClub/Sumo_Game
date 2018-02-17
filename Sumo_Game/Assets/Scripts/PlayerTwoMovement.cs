@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTwoMovement : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class PlayerTwoMovement : MonoBehaviour {
     public float groundCheckRadius;
     public LayerMask whatIsGround;
     private bool grounded;
+
+    public float healthCount;
 
     private Rigidbody2D rb;
 
@@ -46,5 +49,9 @@ public class PlayerTwoMovement : MonoBehaviour {
             rb.velocity = new Vector2(0, jumpHeight);
         }
 
+        if(healthCount <= 0)
+        {
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        }
     }
 }
