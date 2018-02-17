@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameSetting : MonoBehaviour {
     public GameObject PausePanel;
     public GameObject OptionPanel;
     public GameObject PauseButton;
-
+    public GameObject VsyncToggle;
+    public GameObject MusicToggle;
+    public GameObject MusicSlider;
+    private int VsynOn = 60;
     //GameObject PauseTag = null;
     //void Start()
     //{
@@ -15,6 +19,12 @@ public class InGameSetting : MonoBehaviour {
     //        PauseTag = GameObject.FindWithTag("pause");
     //    }
     //}
+
+    void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+    }
+
 
     void Update()
     {
@@ -33,7 +43,24 @@ public class InGameSetting : MonoBehaviour {
             {
                 Pause();
             }
-        }   
+        }
+
+        if (MusicToggle.GetComponent<Toggle>().isOn == true)
+        {
+            MusicSlider.SetActive(true);
+        }
+    }
+
+    public void VsyncSettingOn()
+    {
+        Debug.Log("Turning on VSync...");
+        Application.targetFrameRate = VsynOn;   
+    }
+
+    public void VsyncSettingOff()
+    {
+        Debug.Log("Turning off VSync...");
+        QualitySettings.vSyncCount = 0;
     }
 
     public void Pause()
