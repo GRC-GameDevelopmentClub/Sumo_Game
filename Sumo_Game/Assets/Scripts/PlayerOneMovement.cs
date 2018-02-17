@@ -52,7 +52,8 @@ public class PlayerOneMovement : MonoBehaviour {
 
         if (healthCount <= 0)
         {
-            SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+            //  SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+            Debug.Log("Lost all health");
         }
 
     }
