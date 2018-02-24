@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 50031057061153758}
   - component: {fileID: 114157832174992142}
   - component: {fileID: 61227564990213250}
+  - component: {fileID: 114615739819300660}
   m_Layer: 0
   m_Name: Player Two
   m_TagString: Player Two
@@ -147,13 +148,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpHeight: 10
+  jumpHeight: 15
   groundCheck: {fileID: 4976434255866558}
   groundCheckRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   healthCount: 20
+--- !u!114 &114615739819300660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363679710094218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41ff40e4726a649ae44bd38dda4433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: 0
+  key: 109
 --- !u!212 &212259670725671918
 SpriteRenderer:
   m_ObjectHideFlags: 1
