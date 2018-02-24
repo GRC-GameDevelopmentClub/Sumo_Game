@@ -33,13 +33,15 @@ public class Push : MonoBehaviour {
         if (collision.CompareTag("Player Two"))
         {
             go = collision.gameObject;
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000, 1000));
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000, 200));
+            
         }
 
         if (collision.CompareTag("Player"))
         {
             go = collision.gameObject;
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000, -1000));
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000, -200));
+            
         }
     }
 
