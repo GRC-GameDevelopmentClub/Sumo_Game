@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class InGameSetting : MonoBehaviour {
+    public AudioSource GameMusic;
     public GameObject PausePanel;
     public GameObject OptionPanel;
     public GameObject PauseButton;
     public GameObject VsyncToggle;
     public GameObject MusicToggle;
-    public GameObject MusicSlider;
-    private int VsynOn = 60;
+    public Slider MusicSlider;
+    private float MusicVolume = 1f;
+    private float MusicVolumeOff = 0f;
+    private int VsyncOn = 60;
+    private int VsyncOff = -1;
     //GameObject PauseTag = null;
     //void Start()
     //{
@@ -25,9 +30,17 @@ public class InGameSetting : MonoBehaviour {
         QualitySettings.vSyncCount = 0;
     }
 
+    void Start()
+    {
+        GameMusic = GetComponent<AudioSource>();
+        GameMusic.Play();
+    }
+
 
     void Update()
     {
+        GameMusic.volume = MusicSlider.value;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (OptionPanel.activeSelf)
@@ -45,22 +58,37 @@ public class InGameSetting : MonoBehaviour {
             }
         }
 
-        if (MusicToggle.GetComponent<Toggle>().isOn == true)
-        {
-            MusicSlider.SetActive(true);
-        }
     }
 
     public void VsyncSettingOn()
     {
-        Debug.Log("Turning on VSync...");
-        Application.targetFrameRate = VsynOn;   
+        if (VsyncToggle.GetComponent<Toggle>().isOn == true)
+        {
+            Debug.Log("Turning on VSync...");
+            Application.targetFrameRate = VsyncOn;
+        }
+        else
+        {
+            Debug.Log("Turning off VSync...");
+            Application.targetFrameRate = VsyncOff;
+        }
+         
     }
 
-    public void VsyncSettingOff()
+    public void MusicSetting()
     {
-        Debug.Log("Turning off VSync...");
-        QualitySettings.vSyncCount = 0;
+        if (MusicToggle.GetComponent<Toggle>().isOn != true)
+        {
+            Debug.Log("Turning Music Off...");
+            MusicSlider.gameObject.SetActive(false);
+            AudioListener.volume = MusicVolumeOff;
+        }
+        else
+        {
+            Debug.Log("Turning Music On...");
+            MusicSlider.gameObject.SetActive(true);
+            AudioListener.volume = MusicVolume;
+        }
     }
 
     public void Pause()
