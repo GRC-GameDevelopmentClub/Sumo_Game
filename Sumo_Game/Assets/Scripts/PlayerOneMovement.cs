@@ -18,8 +18,6 @@ public class PlayerOneMovement : MonoBehaviour {
 
     public float healthCount;
 
-    private bool facingRight;
-
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -36,13 +34,11 @@ public class PlayerOneMovement : MonoBehaviour {
         if(Input.GetKey (KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-            rb.transform.localScale = new Vector2(-1, 1);
         }
         
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-            rb.transform.localScale = new Vector2(1, 1);
         }
         else
         {
@@ -61,6 +57,4 @@ public class PlayerOneMovement : MonoBehaviour {
         }
 
     }
-
-  
 }

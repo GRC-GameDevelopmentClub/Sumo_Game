@@ -33,13 +33,11 @@ public class PlayerTwoMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-            rb.transform.localScale = new Vector2(-1, 1);
         }
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-            rb.transform.localScale = new Vector2(1, 1);
         }
         else
         {
