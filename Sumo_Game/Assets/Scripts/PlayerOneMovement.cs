@@ -15,8 +15,10 @@ public class PlayerOneMovement : MonoBehaviour {
     private bool grounded;
 
     private Rigidbody2D rb;
-
     public float healthCount;
+
+    private bool push;
+
 
     // Use this for initialization
     void Start () {
@@ -30,6 +32,7 @@ public class PlayerOneMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        push = GetComponent<Push>().isPushing;
 		
         if(Input.GetKey (KeyCode.A))
         {
@@ -40,7 +43,7 @@ public class PlayerOneMovement : MonoBehaviour {
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
-        else
+        else if (!push)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
