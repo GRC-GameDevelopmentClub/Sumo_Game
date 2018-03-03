@@ -33,13 +33,11 @@ public class PlayerTwoMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-            rb.transform.localScale = new Vector2(-1, 1);
         }
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-            rb.transform.localScale = new Vector2(1, 1);
         }
         else
         {
@@ -48,13 +46,13 @@ public class PlayerTwoMovement : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
-            rb.velocity = new Vector2(0, jumpHeight);
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
 
         if(healthCount <= 0)
         {
             // SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-            Debug.Log("Lost all health");
+            //Debug.Log("Lost all health");
         }
     }
 }
