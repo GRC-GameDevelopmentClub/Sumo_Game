@@ -17,7 +17,7 @@ public class PlayerTwoMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
 
-    private bool push;
+
 
 	// Use this for initialization
 	void Start () {
@@ -32,18 +32,18 @@ public class PlayerTwoMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        push = GetComponent<Push>().isPushing;
+
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.velocity = new Vector2(-moveSpeed, 0);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.velocity = new Vector2(moveSpeed, 0);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
-        else if(!push)
+        else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }

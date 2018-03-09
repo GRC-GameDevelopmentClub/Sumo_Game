@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 114157832174992142}
   - component: {fileID: 61227564990213250}
   - component: {fileID: 114615739819300660}
-  - component: {fileID: 114328726767954610}
+  - component: {fileID: 114345159815843360}
   m_Layer: 0
   m_Name: Player Two
   m_TagString: Player Two
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4691375272585088}
   - component: {fileID: 61556654805907274}
   m_Layer: 0
-  m_Name: Push Collider
+  m_Name: Attack Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,9 +178,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.5, y: 0}
+  m_Offset: {x: -1.1, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 1, y: 1}
 --- !u!114 &114157832174992142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,7 +200,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   healthCount: 20
---- !u!114 &114328726767954610
+--- !u!114 &114345159815843360
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -208,12 +208,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1363679710094218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d40661044169948a9157ab9b00b97d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c55115608cbfbf439faf38a22180011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushTrigger: {fileID: 1856469895593718}
-  pushKey: 303
-  isPushing: 0
+  attackTrigger: {fileID: 1856469895593718}
+  attackKey: 303
+  isAttacking: 0
+  damage: 2
 --- !u!114 &114615739819300660
 MonoBehaviour:
   m_ObjectHideFlags: 1
