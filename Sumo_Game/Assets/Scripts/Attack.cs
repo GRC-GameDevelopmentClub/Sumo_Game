@@ -63,9 +63,7 @@ public class Attack : MonoBehaviour {
 
         if (collision.CompareTag("Player Two"))
         {
-            Debug.Log(collision);
             go = collision.gameObject;
-            Debug.Log(go);
 
             if (!go.GetComponent<Attack>().isBlocking){
                 go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
@@ -76,9 +74,7 @@ public class Attack : MonoBehaviour {
 
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(collision);
             go = collision.gameObject;
-            Debug.Log(go);
 
             if (!go.GetComponent<Attack>().isBlocking)
             {
