@@ -7,7 +7,7 @@ public class Push : MonoBehaviour {
     public GameObject pushTrigger;
     public KeyCode pushKey;
     private Vector2 direction;
-    private bool isPushing;
+    public bool isPushing;
     private float pushTimer;
 
 	// Use this for initialization
@@ -42,7 +42,7 @@ public class Push : MonoBehaviour {
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject go;
 
@@ -50,7 +50,7 @@ public class Push : MonoBehaviour {
         {
             go = collision.gameObject;
             direction = (go.transform.position - this.transform.position);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000 * direction.x, 20000 * direction.y));
+            go.GetComponent<Rigidbody2D>().velocity = new Vector2(200 , 50 );
             Debug.Log("Collision");
             
         }
@@ -58,8 +58,8 @@ public class Push : MonoBehaviour {
         if (collision.CompareTag("Player"))
         {
             go = collision.gameObject;
-            direction = (go.transform.position - this.transform.position).normalized;
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000 * direction.x, 200 * direction.y));
+            direction = (go.transform.position - this.transform.position);
+            go.GetComponent<Rigidbody2D>().velocity = new Vector2(-200, -50);
 
         }
     }
