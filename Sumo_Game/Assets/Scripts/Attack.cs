@@ -67,6 +67,7 @@ public class Attack : MonoBehaviour {
 
             if (!go.GetComponent<Attack>().isBlocking){
                 go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
+                go.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             }
 
             
@@ -78,7 +79,8 @@ public class Attack : MonoBehaviour {
 
             if (!go.GetComponent<Attack>().isBlocking)
             {
-                go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
+                go.GetComponent<PlayerOneMovement>().healthCount -= damage;
+                go.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             }
         }
     }

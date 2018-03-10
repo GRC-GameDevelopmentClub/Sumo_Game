@@ -57,7 +57,7 @@ public class PlayerTwoMovement : MonoBehaviour {
         if(healthCount <= 0)
         {
             // SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-            //Debug.Log("Lost all health");
+           Debug.Log("Player One Wins!");
         }
     }
 }
