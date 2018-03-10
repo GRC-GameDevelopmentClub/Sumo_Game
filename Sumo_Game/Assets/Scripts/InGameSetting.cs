@@ -12,10 +12,10 @@ public class InGameSetting : MonoBehaviour {
     public GameObject VsyncToggle;
     public GameObject MusicToggle;
     public Slider MusicSlider;
-    private float MusicVolume = 1f;
-    private float MusicVolumeOff = 0f;
-    private int VsyncOn = 60;
-    private int VsyncOff = -1;
+    public static float MusicVolume;
+    public static float MusicVolumeOff;
+    public static int VsyncOn;
+    public static int VsyncOff;
     //GameObject PauseTag = null;
     //void Start()
     //{
@@ -34,12 +34,32 @@ public class InGameSetting : MonoBehaviour {
     {
         GameMusic = GetComponent<AudioSource>();
         GameMusic.Play();
+
+        if (OptionPanel.activeSelf == true)
+        {
+            if (MainMenu.ToogleOn == true)
+            {
+                VsyncToggle.GetComponent<Toggle>().isOn = true;
+
+            }
+            else
+            {
+                VsyncToggle.GetComponent<Toggle>().isOn = false;
+            }
+        }
     }
 
 
     void Update()
     {
+        MusicVolume = MainMenu.MusicVolume;
+        MusicVolumeOff = MainMenu.MusicVolumeOff;
+        VsyncOn = MainMenu.VsyncOn;
+        VsyncOff = MainMenu.VsyncOff;
+
         GameMusic.volume = MusicSlider.value;
+
+
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
