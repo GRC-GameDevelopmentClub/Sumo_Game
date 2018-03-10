@@ -176,7 +176,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: -1.1, y: 0}
   serializedVersion: 2
@@ -199,7 +199,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  healthCount: 20
+  healthCount: 50
 --- !u!114 &114345159815843360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,7 +214,9 @@ MonoBehaviour:
   attackTrigger: {fileID: 1856469895593718}
   attackKey: 303
   isAttacking: 0
-  damage: 2
+  damage: 0.1
+  blockKey: 109
+  isBlocking: 0
 --- !u!114 &114615739819300660
 MonoBehaviour:
   m_ObjectHideFlags: 1

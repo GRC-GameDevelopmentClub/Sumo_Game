@@ -199,7 +199,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  healthCount: 20
+  healthCount: 50
 --- !u!114 &114359517301883576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,7 +227,9 @@ MonoBehaviour:
   attackTrigger: {fileID: 1747975047227062}
   attackKey: 102
   isAttacking: 0
-  damage: 2
+  damage: 0.1
+  blockKey: 101
+  isBlocking: 0
 --- !u!212 &212346205996846838
 SpriteRenderer:
   m_ObjectHideFlags: 1

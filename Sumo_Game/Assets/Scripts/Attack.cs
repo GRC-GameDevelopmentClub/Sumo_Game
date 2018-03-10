@@ -8,7 +8,12 @@ public class Attack : MonoBehaviour {
     public KeyCode attackKey;
     public bool isAttacking;
     private float attackTimer;
-    public int damage = 0;
+    public float damage;
+
+    public KeyCode blockKey;
+    public bool isBlocking;
+    private float blockTimer;
+
 
     
     
@@ -16,13 +21,14 @@ public class Attack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         attackTrigger.SetActive(false);
+        isBlocking = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         attackTrigger.SetActive(isAttacking);
-        if (Input.GetKeyDown(attackKey))
+        if (Input.GetKeyDown(attackKey) && !isBlocking)
         {
             isAttacking = true;
         }
@@ -37,6 +43,18 @@ public class Attack : MonoBehaviour {
             isAttacking = false;
             attackTimer = 0;
         }
+
+        if (Input.GetKey(blockKey))
+        {
+            isBlocking = true;
+        }
+
+        if (Input.GetKeyUp(blockKey))
+        {
+            isBlocking = false;
+        }
+
+        
 	}
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -48,7 +66,12 @@ public class Attack : MonoBehaviour {
             Debug.Log(collision);
             go = collision.gameObject;
             Debug.Log(go);
-            go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
+
+            if (!go.GetComponent<Attack>().isBlocking){
+                go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
+            }
+
+            
         }
 
         if (collision.CompareTag("Player"))
@@ -56,7 +79,11 @@ public class Attack : MonoBehaviour {
             Debug.Log(collision);
             go = collision.gameObject;
             Debug.Log(go);
-            go.GetComponent<PlayerOneMovement>().healthCount -= damage;
+
+            if (!go.GetComponent<Attack>().isBlocking)
+            {
+                go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
+            }
         }
     }
 

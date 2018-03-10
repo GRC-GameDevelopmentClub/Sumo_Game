@@ -17,12 +17,14 @@ public class PlayerOneMovement : MonoBehaviour {
     private Rigidbody2D rb;
     public float healthCount;
 
+    private Attack attackScript;
    
 
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        attackScript = GetComponent<Attack>();
     }
 
     void FixedUpdate()
@@ -52,6 +54,12 @@ public class PlayerOneMovement : MonoBehaviour {
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
+
+        if (attackScript.isBlocking)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
 
         if (healthCount <= 0)
         {
