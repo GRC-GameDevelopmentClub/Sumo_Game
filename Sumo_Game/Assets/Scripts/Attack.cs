@@ -63,12 +63,11 @@ public class Attack : MonoBehaviour {
 
         if (collision.CompareTag("Player Two"))
         {
-            Debug.Log(collision);
             go = collision.gameObject;
-            Debug.Log(go);
 
             if (!go.GetComponent<Attack>().isBlocking){
                 go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
+                go.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             }
 
             
@@ -76,13 +75,12 @@ public class Attack : MonoBehaviour {
 
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(collision);
             go = collision.gameObject;
-            Debug.Log(go);
 
             if (!go.GetComponent<Attack>().isBlocking)
             {
-                go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
+                go.GetComponent<PlayerOneMovement>().healthCount -= damage;
+                go.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             }
         }
     }

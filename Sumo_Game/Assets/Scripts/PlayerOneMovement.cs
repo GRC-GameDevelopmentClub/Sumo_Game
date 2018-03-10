@@ -18,13 +18,20 @@ public class PlayerOneMovement : MonoBehaviour {
     public float healthCount;
 
     private Attack attackScript;
-   
 
+    private Color defaultColor;
+    private Color deathColor;
+
+    public static float maxHealth;
+    private SpriteRenderer sr;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         attackScript = GetComponent<Attack>();
+        defaultColor = GetComponentInChildren<SpriteRenderer>().color;
+        maxHealth = healthCount;
+        sr = GetComponentInChildren<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -64,8 +71,14 @@ public class PlayerOneMovement : MonoBehaviour {
         if (healthCount <= 0)
         {
             //  SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-           // Debug.Log("Lost all health");
+            Debug.Log("Player Two Wins!");
         }
+
+        if(healthCount < maxHealth / 2 && sr.color!= Color.green)
+        {
+            sr.color = Color.green;
+        }
+
 
     }
 }
