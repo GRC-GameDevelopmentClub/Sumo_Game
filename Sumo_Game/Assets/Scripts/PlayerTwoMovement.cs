@@ -59,5 +59,20 @@ public class PlayerTwoMovement : MonoBehaviour {
             // SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
            Debug.Log("Player One Wins!");
         }
+
+        flipScale();
+    }
+
+
+    public void flipScale()
+    {
+        if (rb.velocity.x < 0)
+        {
+            this.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(rb.velocity.x > 0)
+        {
+            this.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }
