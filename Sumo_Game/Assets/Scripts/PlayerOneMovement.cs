@@ -20,7 +20,7 @@ public class PlayerOneMovement : MonoBehaviour {
     private Attack attackScript;
 
     private Color defaultColor;
-    private Color deathColor;
+    public Color deathColor;
 
     public static float maxHealth;
     private SpriteRenderer sr;
@@ -39,6 +39,7 @@ public class PlayerOneMovement : MonoBehaviour {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
 
+    float colorTimer;
     // Update is called once per frame
     void Update () {
        
@@ -67,17 +68,23 @@ public class PlayerOneMovement : MonoBehaviour {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
+        if (sr.color == deathColor)
+        {
+            colorTimer += Time.deltaTime;
+            if (colorTimer > 0.25f)
+            {
+                sr.color = defaultColor;
+                colorTimer = 0;
+            }
+        }
 
+        
         if (healthCount <= 0)
         {
             //  SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
             Debug.Log("Player Two Wins!");
         }
 
-        if(healthCount < maxHealth / 2 && sr.color!= Color.green)
-        {
-            sr.color = Color.green;
-        }
 
         flipScale();
     }

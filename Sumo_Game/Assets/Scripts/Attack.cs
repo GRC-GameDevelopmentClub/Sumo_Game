@@ -38,7 +38,7 @@ public class Attack : MonoBehaviour {
             attackTimer += Time.deltaTime;
         }
 
-        if(attackTimer >= 1)
+        if(attackTimer >= 0.25)
         {
             isAttacking = false;
             attackTimer = 0;
@@ -67,7 +67,7 @@ public class Attack : MonoBehaviour {
 
             if (!go.GetComponent<Attack>().isBlocking){
                 go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
-                go.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerTwoMovement>().deathColor;
             }
 
             
@@ -80,7 +80,7 @@ public class Attack : MonoBehaviour {
             if (!go.GetComponent<Attack>().isBlocking)
             {
                 go.GetComponent<PlayerOneMovement>().healthCount -= damage;
-                go.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerOneMovement>().deathColor;
             }
         }
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerTwoMovement : MonoBehaviour {
-
     public float moveSpeed;
     public float jumpHeight;
 
@@ -13,22 +12,34 @@ public class PlayerTwoMovement : MonoBehaviour {
     public LayerMask whatIsGround;
     private bool grounded;
 
+    private Rigidbody2D rb;
     public float healthCount;
 
-    private Rigidbody2D rb;
+    private Attack attackScript;
+
+    private Color defaultColor;
+    public Color deathColor;
+
+    public static float maxHealth;
+    private SpriteRenderer sr;
 
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
-	}
+        attackScript = GetComponent<Attack>();
+        defaultColor = GetComponentInChildren<SpriteRenderer>().color;
+        maxHealth = healthCount;
+        sr = GetComponentInChildren<SpriteRenderer>();
+    }
 
 
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
+
+    float colorTimer;
 
     // Update is called once per frame
     void Update () {
@@ -54,7 +65,19 @@ public class PlayerTwoMovement : MonoBehaviour {
             rb.velocity = new Vector2(0, jumpHeight);
         }
 
-        if(healthCount <= 0)
+
+        if (sr.color == deathColor)
+        {
+            colorTimer += Time.deltaTime;
+            if (colorTimer > 0.25f)
+            {
+                sr.color = defaultColor;
+                colorTimer = 0;
+            }
+        }
+
+
+        if (healthCount <= 0)
         {
             // SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
            Debug.Log("Player One Wins!");

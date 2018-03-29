@@ -209,6 +209,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4158747351599550, guid: a60bac006c1228a449d5b63c81f4ac54, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.42499638
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a60bac006c1228a449d5b63c81f4ac54, type: 2}
   m_IsPrefabParent: 0
@@ -452,15 +456,15 @@ GameObject:
 --- !u!114 &1609276761
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114841116514187934, guid: 63b452b99e3c048e59a45e986099ff99,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1609276760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 70e7a9d3dce5b4ce5b287f74b638f7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
 --- !u!61 &1609276762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -495,7 +499,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1609276760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.341477, y: 0.14709324, z: 0}
+  m_LocalPosition: {x: 11.5, y: -1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1027950871}
@@ -635,6 +639,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114157832174992142, guid: 34790f8c72d645d4ebedbbc2c211897d,
+        type: 2}
+      propertyPath: deathColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157832174992142, guid: 34790f8c72d645d4ebedbbc2c211897d,
+        type: 2}
+      propertyPath: deathColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157832174992142, guid: 34790f8c72d645d4ebedbbc2c211897d,
+        type: 2}
+      propertyPath: deathColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34790f8c72d645d4ebedbbc2c211897d, type: 2}
   m_IsPrefabParent: 0
@@ -676,6 +695,21 @@ Prefab:
     - target: {fileID: 4244062192183106, guid: b6fd039566f53aa4aac9f89511df6b0e, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666080072081308, guid: b6fd039566f53aa4aac9f89511df6b0e,
+        type: 2}
+      propertyPath: deathColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666080072081308, guid: b6fd039566f53aa4aac9f89511df6b0e,
+        type: 2}
+      propertyPath: deathColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114666080072081308, guid: b6fd039566f53aa4aac9f89511df6b0e,
+        type: 2}
+      propertyPath: deathColor.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6fd039566f53aa4aac9f89511df6b0e, type: 2}
