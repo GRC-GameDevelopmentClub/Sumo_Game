@@ -8,8 +8,8 @@ public class Block : MonoBehaviour {
     public bool block;
     public KeyCode key;
     private Rigidbody2D rb;
-   // public bool blockCoolDown;
-   // public float blockTimer;
+
+    public Color blockColor;
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +23,12 @@ public class Block : MonoBehaviour {
         {
             block = true;
             rb.velocity = new Vector2(0, rb.velocity.y);
+            this.GetComponentInChildren<SpriteRenderer>().color = blockColor;
         }
         else
         {
             block = false;
         }
+
 	}
 }

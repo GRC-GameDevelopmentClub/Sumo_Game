@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class LoseCon : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Player Two"))
         {
-            SceneManager.LoadScene("test"); // Penalties or Lose
+            SceneManager.LoadScene("Lose"); // Penalties or Lose
         }
     }
     // Use this for initialization

@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hao.unity
     guid: 5de9f94c31ea53b42b8b33e0b90945f3
+  - enabled: 1
+    path: Assets/Scenes/Miguel.unity
+    guid: 4b4cf261479e08747a011877055a566d
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 290449800848427448364e5a922833ec

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerOneMovement : MonoBehaviour {
-
-
+public class PlayerMovement : MonoBehaviour
+{
     public float moveSpeed;
     public float jumpHeight;
 
@@ -22,11 +21,16 @@ public class PlayerOneMovement : MonoBehaviour {
     private Color defaultColor;
     public Color deathColor;
 
-    public static float maxHealth;
+    public float maxHealth;
     private SpriteRenderer sr;
 
+
+    public KeyCode left, right, jump;
+    public string name;
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
         attackScript = GetComponent<Attack>();
         defaultColor = GetComponentInChildren<SpriteRenderer>().color;
@@ -41,15 +45,16 @@ public class PlayerOneMovement : MonoBehaviour {
 
     float colorTimer;
     // Update is called once per frame
-    void Update () {
-       
-		
-        if(Input.GetKey (KeyCode.A))
+    void Update()
+    {
+
+
+        if (Input.GetKey(left))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
-        
-        else if (Input.GetKey(KeyCode.D))
+
+        else if (Input.GetKey(right))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
@@ -58,7 +63,7 @@ public class PlayerOneMovement : MonoBehaviour {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && grounded)
+        if (Input.GetKeyDown(jump) && grounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
@@ -68,7 +73,7 @@ public class PlayerOneMovement : MonoBehaviour {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-        if (sr.color == deathColor)
+        if (sr.color != defaultColor)
         {
             colorTimer += Time.deltaTime;
             if (colorTimer > 0.25f)
@@ -78,11 +83,11 @@ public class PlayerOneMovement : MonoBehaviour {
             }
         }
 
-        
+
         if (healthCount <= 0)
         {
             //  SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-            Debug.Log("Player Two Wins!");
+            Debug.Log(name + " Wins!");
         }
 
 
@@ -93,7 +98,7 @@ public class PlayerOneMovement : MonoBehaviour {
     {
         if (rb.velocity.x < 0)
         {
-            this.transform.localScale = new Vector3(-1,1,1);
+            this.transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (rb.velocity.x > 0)
         {
