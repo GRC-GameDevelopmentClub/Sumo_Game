@@ -240,6 +240,10 @@ MonoBehaviour:
     m_Bits: 256
   healthCount: 50
   deathColor: {r: 1, g: 0, b: 0, a: 1}
+  maxHealth: 0
+  left: 276
+  right: 275
+  jump: 273
   name: Player Two
 --- !u!114 &114615739819300660
 MonoBehaviour:
@@ -254,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   key: 109
+  blockColor: {r: 0.94482756, g: 0, b: 1, a: 0.959}
 --- !u!212 &212259670725671918
 SpriteRenderer:
   m_ObjectHideFlags: 1

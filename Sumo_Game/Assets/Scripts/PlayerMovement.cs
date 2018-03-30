@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private Color defaultColor;
     public Color deathColor;
 
-    public static float maxHealth;
+    public float maxHealth;
     private SpriteRenderer sr;
 
 
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-        if (sr.color == deathColor)
+        if (sr.color != defaultColor)
         {
             colorTimer += Time.deltaTime;
             if (colorTimer > 0.25f)

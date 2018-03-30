@@ -5,22 +5,48 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour {
 
-    public Text healthText;
-    public GameObject p1;
-    public GameObject p2;
+    public GameObject player;
+    private PlayerMovement playerScript;
 
-    private PlayerMovement p1Script;
-    private PlayerMovement p2Script;
+    public GameObject hpBar;
+    private RectTransform hpBarRect;
+    private Image hpBarImage;
+    public Text playerText;
 
-	// Use this for initialization
-	void Start () {
-        p1Script = p1.GetComponent<PlayerMovement>();
-        p2Script = p2.GetComponent<PlayerMovement>();
-        healthText.text = "Player 1: " + p1Script.healthCount + " Player 2: " + p2Script.healthCount;
+    private float defaultScale;
+
+    private void Awake()
+    {
+        playerScript = player.GetComponent<PlayerMovement>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        healthText.text = "Player 1: " + p1Script.healthCount + " Player 2: " + p2Script.healthCount;
+
+    // Use this for initialization
+    void Start() {
+       
+        playerText.text = "Player 1: " + playerScript.name;
+
+        hpBarRect = hpBar.GetComponent<RectTransform>();
+        hpBarImage = hpBar.GetComponent<Image>();
+
+        defaultScale = hpBarRect.localScale.x;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        hpBarRect.localScale = new Vector3(defaultScale * (playerScript.healthCount / playerScript.maxHealth), hpBarRect.localScale.y);
+
+
+        if (playerScript.healthCount < playerScript.maxHealth * 0.25f)
+        {
+            hpBarImage.color = Color.red;
+        }
+        else if(playerScript.healthCount < playerScript.maxHealth * 0.5f)
+        {
+            hpBarImage.color = Color.yellow;
+        }else
+        {
+            hpBarImage.color = Color.green;
+        }
+
     }
 }
