@@ -66,8 +66,8 @@ public class Attack : MonoBehaviour {
             go = collision.gameObject;
 
             if (!go.GetComponent<Attack>().isBlocking){
-                go.GetComponent<PlayerTwoMovement>().healthCount -= damage;
-                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerTwoMovement>().deathColor;
+                go.GetComponent<PlayerMovement>().healthCount -= damage;
+                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerMovement>().deathColor;
             }
 
             
@@ -79,8 +79,8 @@ public class Attack : MonoBehaviour {
 
             if (!go.GetComponent<Attack>().isBlocking)
             {
-                go.GetComponent<PlayerOneMovement>().healthCount -= damage;
-                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerOneMovement>().deathColor;
+                go.GetComponent<PlayerMovement>().healthCount -= damage;
+                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerMovement>().deathColor;
             }
         }
     }

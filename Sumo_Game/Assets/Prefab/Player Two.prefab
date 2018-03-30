@@ -51,10 +51,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4613631010761866}
   - component: {fileID: 50031057061153758}
-  - component: {fileID: 114157832174992142}
   - component: {fileID: 61227564990213250}
   - component: {fileID: 114615739819300660}
   - component: {fileID: 114345159815843360}
+  - component: {fileID: 114581204527913802}
   m_Layer: 0
   m_Name: Player Two
   m_TagString: Player Two
@@ -203,25 +203,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114157832174992142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1363679710094218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1d3345b65c0a6499dcb2b891f6a397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpHeight: 15
-  groundCheck: {fileID: 4976434255866558}
-  groundCheckRadius: 0.1
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  healthCount: 50
 --- !u!114 &114345159815843360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,6 +220,27 @@ MonoBehaviour:
   damage: 0.1
   blockKey: 109
   isBlocking: 0
+--- !u!114 &114581204527913802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363679710094218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a33024f707eef45ab6b95cb1a66b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpHeight: 15
+  groundCheck: {fileID: 4976434255866558}
+  groundCheckRadius: 0.1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  healthCount: 50
+  deathColor: {r: 1, g: 0, b: 0, a: 1}
+  name: Player Two
 --- !u!114 &114615739819300660
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -639,20 +639,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114157832174992142, guid: 34790f8c72d645d4ebedbbc2c211897d,
+    - target: {fileID: 114581204527913802, guid: 34790f8c72d645d4ebedbbc2c211897d,
         type: 2}
-      propertyPath: deathColor.r
-      value: 1
+      propertyPath: left
+      value: 276
       objectReference: {fileID: 0}
-    - target: {fileID: 114157832174992142, guid: 34790f8c72d645d4ebedbbc2c211897d,
+    - target: {fileID: 114581204527913802, guid: 34790f8c72d645d4ebedbbc2c211897d,
         type: 2}
-      propertyPath: deathColor.g
-      value: 0
+      propertyPath: right
+      value: 275
       objectReference: {fileID: 0}
-    - target: {fileID: 114157832174992142, guid: 34790f8c72d645d4ebedbbc2c211897d,
+    - target: {fileID: 114581204527913802, guid: 34790f8c72d645d4ebedbbc2c211897d,
         type: 2}
-      propertyPath: deathColor.b
-      value: 0
+      propertyPath: jump
+      value: 273
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34790f8c72d645d4ebedbbc2c211897d, type: 2}
@@ -695,21 +695,6 @@ Prefab:
     - target: {fileID: 4244062192183106, guid: b6fd039566f53aa4aac9f89511df6b0e, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666080072081308, guid: b6fd039566f53aa4aac9f89511df6b0e,
-        type: 2}
-      propertyPath: deathColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666080072081308, guid: b6fd039566f53aa4aac9f89511df6b0e,
-        type: 2}
-      propertyPath: deathColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114666080072081308, guid: b6fd039566f53aa4aac9f89511df6b0e,
-        type: 2}
-      propertyPath: deathColor.b
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6fd039566f53aa4aac9f89511df6b0e, type: 2}

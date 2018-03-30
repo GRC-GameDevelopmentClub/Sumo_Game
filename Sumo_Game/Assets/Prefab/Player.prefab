@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61856560789916474}
   - component: {fileID: 114359517301883576}
   - component: {fileID: 114508086263337448}
-  - component: {fileID: 114666080072081308}
+  - component: {fileID: 114413850987063412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -216,6 +216,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   key: 101
+--- !u!114 &114413850987063412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028593139643266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a33024f707eef45ab6b95cb1a66b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpHeight: 15
+  groundCheck: {fileID: 4869708712292864}
+  groundCheckRadius: 0.1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  healthCount: 50
+  deathColor: {r: 1, g: 0, b: 0, a: 1}
+  left: 97
+  right: 100
+  jump: 119
+  name: Player One
 --- !u!114 &114508086263337448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,25 +257,6 @@ MonoBehaviour:
   damage: 0.1
   blockKey: 101
   isBlocking: 0
---- !u!114 &114666080072081308
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1028593139643266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2306ad8dd1ba344aab2c83e3bc1af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpHeight: 15
-  groundCheck: {fileID: 4869708712292864}
-  groundCheckRadius: 0.1
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  healthCount: 50
 --- !u!212 &212346205996846838
 SpriteRenderer:
   m_ObjectHideFlags: 1

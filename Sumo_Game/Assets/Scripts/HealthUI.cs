@@ -9,13 +9,13 @@ public class HealthUI : MonoBehaviour {
     public GameObject p1;
     public GameObject p2;
 
-    private PlayerOneMovement p1Script;
-    private PlayerTwoMovement p2Script;
+    private PlayerMovement p1Script;
+    private PlayerMovement p2Script;
 
 	// Use this for initialization
 	void Start () {
-        p1Script = p1.GetComponent<PlayerOneMovement>();
-        p2Script = p2.GetComponent<PlayerTwoMovement>();
+        p1Script = p1.GetComponent<PlayerMovement>();
+        p2Script = p2.GetComponent<PlayerMovement>();
         healthText.text = "Player 1: " + p1Script.healthCount + " Player 2: " + p2Script.healthCount;
     }
 	
