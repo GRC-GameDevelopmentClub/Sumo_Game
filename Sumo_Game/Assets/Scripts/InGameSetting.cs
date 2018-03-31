@@ -33,8 +33,6 @@ public class InGameSetting : MonoBehaviour {
 
     void Start()
     {
-        MainSetting.VsyncOff = MainSetting.GetComponent<int>();
-        MainSetting.VsyncOn = MainSetting.GetComponent<int>();
         GameMusic = GetComponent<AudioSource>();
         GameMusic.Play();
 
@@ -94,7 +92,7 @@ public class InGameSetting : MonoBehaviour {
         {
             Debug.Log("Turning Music On...");
             MusicSlider.gameObject.SetActive(true);
-            AudioListener.volume = MainSetting.MusicVolume;
+            AudioListener.volume = GameMusic.volume;
         }
     }
 

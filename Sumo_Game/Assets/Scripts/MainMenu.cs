@@ -16,7 +16,6 @@ public class MainMenu : MonoBehaviour {
     public Button PlayButton;
     public float SliderValue;
     public float SliderValueStored;
-    public float MusicVolume;
     public float MusicVolumeOff = 0f;
     public int VsyncOn = 60;
     public int VsyncOff = -1;
@@ -36,8 +35,7 @@ public class MainMenu : MonoBehaviour {
 
     void Update()
     {
-        SliderValue = MusicSlider.value;
-        music.volume = SliderValue;
+        music.volume = MusicSlider.value;
     }
 
     private void OnEnable()
@@ -81,7 +79,7 @@ public class MainMenu : MonoBehaviour {
         {
             Debug.Log("Turning Music On...");
             MusicSlider.gameObject.SetActive(true);
-            AudioListener.volume = MusicVolume;
+            AudioListener.volume = music.volume;
         }
     }
 
