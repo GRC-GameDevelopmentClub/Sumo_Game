@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode left, right, jump;
     public string name;
 
+
     // Use this for initialization
     void Start()
     {
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         defaultColor = GetComponentInChildren<SpriteRenderer>().color;
         maxHealth = healthCount;
         sr = GetComponentInChildren<SpriteRenderer>();
+
+        
     }
 
     void FixedUpdate()
@@ -83,13 +86,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
         if (healthCount <= 0)
         {
-            //  SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-            Debug.Log(name + " Wins!");
+            SceneManager.LoadScene("Lose");
         }
-
 
         flipScale();
     }
