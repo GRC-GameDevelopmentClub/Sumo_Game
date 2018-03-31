@@ -7,6 +7,7 @@ TagManager:
   - pause
   - Lim
   - Player Two
+  - MenuSetting
   layers:
   - Default
   - TransparentFX
