@@ -1689,6 +1689,7 @@ MonoBehaviour:
   VsyncToggle: {fileID: 975572712}
   MusicToggle: {fileID: 326656486}
   MusicSlider: {fileID: 1770465579}
+  MainSetting: {fileID: 0}
 --- !u!82 &1352549502
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1702,7 +1703,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

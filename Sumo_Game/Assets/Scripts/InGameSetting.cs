@@ -12,10 +12,9 @@ public class InGameSetting : MonoBehaviour {
     public GameObject VsyncToggle;
     public GameObject MusicToggle;
     public Slider MusicSlider;
-    public static float MusicVolume;
-    public static float MusicVolumeOff;
-    public static int VsyncOn;
-    public static int VsyncOff;
+    public MainMenu MainSetting;
+
+
     //GameObject PauseTag = null;
     //void Start()
     //{
@@ -27,38 +26,24 @@ public class InGameSetting : MonoBehaviour {
 
     void Awake()
     {
+        MainSetting = new MainMenu();
         QualitySettings.vSyncCount = 0;
+
     }
 
     void Start()
     {
+        MainSetting.VsyncOff = MainSetting.GetComponent<int>();
+        MainSetting.VsyncOn = MainSetting.GetComponent<int>();
         GameMusic = GetComponent<AudioSource>();
         GameMusic.Play();
 
-        if (OptionPanel.activeSelf == true)
-        {
-            if (MainMenu.ToogleOn == true)
-            {
-                VsyncToggle.GetComponent<Toggle>().isOn = true;
-
-            }
-            else
-            {
-                VsyncToggle.GetComponent<Toggle>().isOn = false;
-            }
-        }
     }
 
 
     void Update()
     {
-        MusicVolume = MainMenu.MusicVolume;
-        MusicVolumeOff = MainMenu.MusicVolumeOff;
-        VsyncOn = MainMenu.VsyncOn;
-        VsyncOff = MainMenu.VsyncOff;
-
         GameMusic.volume = MusicSlider.value;
-
 
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -84,13 +69,15 @@ public class InGameSetting : MonoBehaviour {
     {
         if (VsyncToggle.GetComponent<Toggle>().isOn == true)
         {
+            VsyncToggle.GetComponent<Toggle>().isOn = true;
             Debug.Log("Turning on VSync...");
-            Application.targetFrameRate = VsyncOn;
+            Application.targetFrameRate = MainSetting.VsyncOn;
         }
         else
         {
+            VsyncToggle.GetComponent<Toggle>().isOn = false;
             Debug.Log("Turning off VSync...");
-            Application.targetFrameRate = VsyncOff;
+            Application.targetFrameRate = MainSetting.VsyncOff;
         }
          
     }
@@ -101,13 +88,13 @@ public class InGameSetting : MonoBehaviour {
         {
             Debug.Log("Turning Music Off...");
             MusicSlider.gameObject.SetActive(false);
-            AudioListener.volume = MusicVolumeOff;
+            AudioListener.volume = MainSetting.MusicVolumeOff;
         }
         else
         {
             Debug.Log("Turning Music On...");
             MusicSlider.gameObject.SetActive(true);
-            AudioListener.volume = MusicVolume;
+            AudioListener.volume = MainSetting.MusicVolume;
         }
     }
 
