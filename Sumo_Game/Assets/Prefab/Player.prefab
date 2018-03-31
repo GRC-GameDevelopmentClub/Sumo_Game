@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4244062192183106}
   - component: {fileID: 50824363137196330}
   - component: {fileID: 61856560789916474}
-  - component: {fileID: 114359517301883576}
   - component: {fileID: 114508086263337448}
   - component: {fileID: 114413850987063412}
   m_Layer: 0
@@ -203,20 +202,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114359517301883576
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1028593139643266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a41ff40e4726a649ae44bd38dda4433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  block: 0
-  key: 101
-  blockColor: {r: 0.8206897, g: 0, b: 1, a: 1}
 --- !u!114 &114413850987063412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,9 +241,10 @@ MonoBehaviour:
   attackTrigger: {fileID: 1747975047227062}
   attackKey: 102
   isAttacking: 0
-  damage: 0.1
+  damage: 0.5
   blockKey: 101
   isBlocking: 0
+  blockColor: {r: 1, g: 0, b: 0.972414, a: 1}
 --- !u!212 &212346205996846838
 SpriteRenderer:
   m_ObjectHideFlags: 1

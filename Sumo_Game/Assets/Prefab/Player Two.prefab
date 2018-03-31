@@ -52,12 +52,11 @@ GameObject:
   - component: {fileID: 4613631010761866}
   - component: {fileID: 50031057061153758}
   - component: {fileID: 61227564990213250}
-  - component: {fileID: 114615739819300660}
   - component: {fileID: 114345159815843360}
   - component: {fileID: 114581204527913802}
   m_Layer: 0
   m_Name: Player Two
-  m_TagString: Player Two
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,6 +219,7 @@ MonoBehaviour:
   damage: 0.1
   blockKey: 109
   isBlocking: 0
+  blockColor: {r: 1, g: 0, b: 0.8896551, a: 0.978}
 --- !u!114 &114581204527913802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,20 +245,6 @@ MonoBehaviour:
   right: 275
   jump: 273
   name: Player Two
---- !u!114 &114615739819300660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1363679710094218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a41ff40e4726a649ae44bd38dda4433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  block: 0
-  key: 109
-  blockColor: {r: 0.94482756, g: 0, b: 1, a: 0.959}
 --- !u!212 &212259670725671918
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class spike: MonoBehaviour {
-	public int damage;
+	public float damage;
 
 	// Use this for initialization
 	void Start () 
@@ -18,7 +18,7 @@ public class spike: MonoBehaviour {
 		//Debug.Log ("healthCount");
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnCollisionStay2D(Collision2D collision)
 	{
 		GameObject GO;
 		Debug.Log ("HURT!");
@@ -26,15 +26,9 @@ public class spike: MonoBehaviour {
 		if (collision.gameObject.CompareTag("Player"))
 		{
 			GO = collision.gameObject;
-			GO.GetComponent<PlayerOneMovement> ().healthCount -= damage;
+			GO.GetComponent<PlayerMovement>().healthCount -= damage;
 		}
 
-		//player2
-		if (collision.gameObject.CompareTag("Player Two"))
-		{
-			GO = collision.gameObject;
-			GO.GetComponent<PlayerTwoMovement> ().healthCount -= damage;
-		}
 	}
 }
 

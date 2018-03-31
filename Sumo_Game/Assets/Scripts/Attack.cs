@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Attack : MonoBehaviour {
 
@@ -12,17 +13,15 @@ public class Attack : MonoBehaviour {
 
     public KeyCode blockKey;
     public bool isBlocking;
-    private float blockTimer;
+    public Color blockColor;
 
+    private Rigidbody2D rb;
 
-    
-    
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         attackTrigger.SetActive(false);
-        isBlocking = false;
-	}
+        rb = GetComponent<Rigidbody2D>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -47,13 +46,13 @@ public class Attack : MonoBehaviour {
         if (Input.GetKey(blockKey))
         {
             isBlocking = true;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            this.GetComponentInChildren<SpriteRenderer>().color = blockColor;
         }
-
-        if (Input.GetKeyUp(blockKey))
+        else
         {
             isBlocking = false;
         }
-
         
 	}
 
@@ -61,28 +60,21 @@ public class Attack : MonoBehaviour {
     {
         GameObject go;
 
-        if (collision.CompareTag("Player Two"))
-        {
-            go = collision.gameObject;
-
-            if (!go.GetComponent<Attack>().isBlocking){
-                go.GetComponent<PlayerMovement>().healthCount -= damage;
-                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerMovement>().deathColor;
-            }
-
-            
-        }
-
         if (collision.CompareTag("Player"))
         {
             go = collision.gameObject;
 
-            if (!go.GetComponent<Attack>().isBlocking)
+            go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerMovement>().deathColor;
+            if (go.GetComponent<Attack>().isBlocking)
+            {
+                go.GetComponent<PlayerMovement>().healthCount -= (damage * 0.5f);
+            }else
             {
                 go.GetComponent<PlayerMovement>().healthCount -= damage;
-                go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerMovement>().deathColor;
             }
+
         }
+
     }
 
 }

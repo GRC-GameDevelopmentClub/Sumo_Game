@@ -23,7 +23,7 @@ public class HealthUI : MonoBehaviour {
     // Use this for initialization
     void Start() {
        
-        playerText.text = "Player 1: " + playerScript.name;
+        playerText.text = playerScript.name;
 
         hpBarRect = hpBar.GetComponent<RectTransform>();
         hpBarImage = hpBar.GetComponent<Image>();
