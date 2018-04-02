@@ -90,7 +90,11 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene("Lose");
         }
 
-        flipScale();
+        if (sr.color == defaultColor)
+        {
+            flipScale();
+        }
+            
     }
 
     public void flipScale()
