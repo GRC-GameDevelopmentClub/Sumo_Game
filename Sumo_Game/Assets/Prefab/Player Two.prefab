@@ -145,7 +145,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   blockKey: 109
   isBlocking: 0
   blockColor: {r: 1, g: 0, b: 0.8896551, a: 0.978}
+  pushForce: 10
 --- !u!114 &114581204527913802
 MonoBehaviour:
   m_ObjectHideFlags: 1

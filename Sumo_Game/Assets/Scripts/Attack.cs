@@ -17,6 +17,9 @@ public class Attack : MonoBehaviour {
 
     private Rigidbody2D rb;
 
+    Vector2 direction;
+    public float pushForce;
+
     // Use this for initialization
     void Start () {
         attackTrigger.SetActive(false);
@@ -59,18 +62,25 @@ public class Attack : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject go;
+        
 
         if (collision.CompareTag("Player"))
         {
             go = collision.gameObject;
 
+            PlayerMovement script = go.GetComponent<PlayerMovement>();
+            direction = (go.transform.position - this.transform.position);
+
             go.GetComponentInChildren<SpriteRenderer>().color = go.GetComponent<PlayerMovement>().deathColor;
             if (go.GetComponent<Attack>().isBlocking)
             {
-                go.GetComponent<PlayerMovement>().healthCount -= (damage * 0.5f);
+                script.healthCount -= (damage * 0.5f);
+                
             }else
             {
-                go.GetComponent<PlayerMovement>().healthCount -= damage;
+                script.healthCount -= damage;
+                float pushMulti = script.maxHealth / script.healthCount;
+                go.GetComponent<Rigidbody2D>().velocity = direction * pushForce * pushMulti;
             }
 
         }
