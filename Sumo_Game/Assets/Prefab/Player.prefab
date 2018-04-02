@@ -145,7 +145,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -241,10 +241,11 @@ MonoBehaviour:
   attackTrigger: {fileID: 1747975047227062}
   attackKey: 102
   isAttacking: 0
-  damage: 0.5
+  damage: 0.1
   blockKey: 101
   isBlocking: 0
   blockColor: {r: 1, g: 0, b: 0.972414, a: 1}
+  pushForce: 10
 --- !u!212 &212346205996846838
 SpriteRenderer:
   m_ObjectHideFlags: 1

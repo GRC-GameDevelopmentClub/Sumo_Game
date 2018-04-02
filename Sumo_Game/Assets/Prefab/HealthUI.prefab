@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 223097636375361916}
   - component: {fileID: 114928255437737862}
   - component: {fileID: 114659234817584504}
-  - component: {fileID: 114375219083557470}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -155,7 +154,6 @@ GameObject:
   - component: {fileID: 224737299538327226}
   - component: {fileID: 222416385789851468}
   - component: {fileID: 114670034207346280}
-  - component: {fileID: 114882521854673112}
   m_Layer: 5
   m_Name: Hp Bar bg
   m_TagString: Untagged
@@ -293,20 +291,6 @@ MonoBehaviour:
   player: {fileID: 0}
   hpBar: {fileID: 1399325425035976}
   playerText: {fileID: 114398537067593246}
---- !u!114 &114375219083557470
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1083792822685782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ceb06725319fd4d8f74aecb219a566, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  hpBar: {fileID: 0}
-  playerText: {fileID: 0}
 --- !u!114 &114398537067593246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -489,20 +473,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114882521854673112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647117035138780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ceb06725319fd4d8f74aecb219a566, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  hpBar: {fileID: 0}
-  playerText: {fileID: 0}
 --- !u!114 &114928255437737862
 MonoBehaviour:
   m_ObjectHideFlags: 1

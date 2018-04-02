@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
         maxHealth = healthCount;
         sr = GetComponentInChildren<SpriteRenderer>();
 
-        
     }
 
     void FixedUpdate()
@@ -61,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
-        else
+        else if (sr.color == defaultColor) 
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
