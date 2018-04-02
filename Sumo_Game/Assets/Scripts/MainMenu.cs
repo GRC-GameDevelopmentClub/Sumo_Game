@@ -7,17 +7,18 @@ using UnityEngine.Audio;
 
 
 public class MainMenu : MonoBehaviour {
-    public static bool ToogleOn = false;
+    public bool ToogleOn;
     public AudioSource music;
     public Object play;
     public GameObject VsyncToggle;
     public GameObject MusicToggle;
     public Slider MusicSlider;
     public Button PlayButton;
-    public static float MusicVolume = 1f;
-    public static float MusicVolumeOff = 0f;
-    public static int VsyncOn = 60;
-    public static int VsyncOff = -1;
+    public float SliderValue;
+    public float SliderValueStored;
+    public float MusicVolumeOff = 0f;
+    public int VsyncOn = 60;
+    public int VsyncOff = -1;
 
     void Awake()
     {
@@ -42,22 +43,24 @@ public class MainMenu : MonoBehaviour {
         PlayButton.onClick.AddListener(MusicOffOnPlay);
     }
 
-    public void MusicOffOnPlay()
-    {
+   public void MusicOffOnPlay()
+   {
         music.Stop();
-    }
+   }
 
     public void VsyncSettingOn()
     {
         if (VsyncToggle.GetComponent<Toggle>().isOn == true)
         {
             ToogleOn = true;
+            Debug.Log(ToogleOn + " ON BOI");
             Debug.Log("Turning on VSync...");
             Application.targetFrameRate = VsyncOn;
         }
         else
         {
             ToogleOn = false;
+            Debug.Log(ToogleOn + " False");
             Debug.Log("Turning off VSync...");
             Application.targetFrameRate = VsyncOff;
         }
@@ -76,7 +79,7 @@ public class MainMenu : MonoBehaviour {
         {
             Debug.Log("Turning Music On...");
             MusicSlider.gameObject.SetActive(true);
-            AudioListener.volume = MusicVolume;
+            AudioListener.volume = music.volume;
         }
     }
 
