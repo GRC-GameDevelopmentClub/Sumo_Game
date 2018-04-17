@@ -1586,6 +1586,7 @@ MonoBehaviour:
   VsyncToggle: {fileID: 1368122781894862}
   MusicToggle: {fileID: 1157030698913576}
   MusicSlider: {fileID: 114799949105682342}
+  MainSetting: {fileID: 0}
 --- !u!114 &114814546903326914
 MonoBehaviour:
   m_ObjectHideFlags: 1
