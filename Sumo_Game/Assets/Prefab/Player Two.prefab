@@ -232,10 +232,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTrigger: {fileID: 1856469895593718}
-  attackKey: 303
+  attackKey: 102
   isAttacking: 0
   damage: 0.1
-  blockKey: 109
+  blockKey: 304
   isBlocking: 0
   blockColor: {r: 1, g: 0, b: 0.8896551, a: 0.978}
   pushForce: 10
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpHeight: 15
+  jumpHeight: 25
   groundCheck: {fileID: 4976434255866558}
   groundCheckRadius: 0.1
   whatIsGround:
@@ -260,9 +260,9 @@ MonoBehaviour:
   healthCount: 50
   deathColor: {r: 1, g: 0, b: 0, a: 1}
   maxHealth: 0
-  left: 276
-  right: 275
-  jump: 273
+  left: 97
+  right: 100
+  jump: 119
   name: Player Two
 --- !u!212 &212995641096085338
 SpriteRenderer:

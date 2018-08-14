@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private Color defaultColor;
     public Color deathColor;
 
+    
     public float maxHealth;
     private SpriteRenderer sr;
 
